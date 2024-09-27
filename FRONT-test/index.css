@@ -1,0 +1,18 @@
+body {
+  min-width: 100svh;
+  background-color: skyblue;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px;
+}
+
+.artwork {
+  width: 500px;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
