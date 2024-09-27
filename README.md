@@ -33,7 +33,7 @@ npm install
 1. **Clona el repositorio:**
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/marugandev/proyecto-8-API-REST-FILES.git
    cd proyecto-8-API-REST-FILES
    ```
 
