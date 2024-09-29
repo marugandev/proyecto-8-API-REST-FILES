@@ -45,8 +45,12 @@ const putGallery = async (req, res, next) => {
     const { id } = req.params;
     const newGallery = new Gallery(req.body);
     newGallery._id = id;
+
     if (req.file) {
       newGallery.imgUrl = req.file.path;
+
+      const oldGallery = await Gallery.findById(id);
+      deleteFile(oldGallery.imgUrl);
     }
 
     const newGalleryUpdated = await Gallery.findByIdAndUpdate(id, newGallery, {

@@ -48,8 +48,12 @@ const putArtwork = async (req, res, next) => {
     const { id } = req.params;
     const newArtwork = new Artwork(req.body);
     newArtwork._id = id;
+
     if (req.file) {
       newArtwork.imgUrl = req.file.path;
+
+      const oldArtwork = await Artwork.findById(id);
+      deleteFile(oldArtwork.imgUrl);
     }
 
     const newArtworkUpdated = await Artwork.findByIdAndUpdate(id, newArtwork, {
